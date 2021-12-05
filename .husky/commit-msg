@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+# --no-install 强制使用本地模块，不用远程拉取
+npx --no-install commitlint --edit "$1"
