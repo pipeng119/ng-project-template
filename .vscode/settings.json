@@ -1,0 +1,42 @@
+{
+  // https://code.visualstudio.com/docs/getstarted/settings#_default-settings
+  "editor.rulers": [100],
+  // Maximum amount of characters per line (0 = disable).每行的最大字符数
+  "html.format.wrapLineLength": 100,
+  // Wrap attributes. 格式化html时 属性的位置
+  //  - auto: Wrap attributes only when line length is exceeded. 默认
+  //  - force: Wrap each attribute except first. 除了第一个属性 其他属性标签后缩进对齐
+  //  - force-aligned: Wrap each attribute except first and keep aligned. 除了第一个属性其他的都以第一个属性对齐
+  //  - force-expand-multiline: Wrap each attribute. 每一个属性都在标签缩进后折行对齐
+  //  - aligned-multiple: Wrap when line length is exceeded, align attributes vertically. 超过行长时换行，垂直对齐属性
+  //  - preserve: Preserve wrapping of attributes.
+  //  - preserve-aligned: Preserve wrapping of attributes but align.
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  // "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  },
+  "[typescript]": {
+    // 定义默认的格式化程序
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
+}
