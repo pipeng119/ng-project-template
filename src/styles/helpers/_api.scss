@@ -7,8 +7,18 @@
 
 @use "variables"as *;
 
-@use "border";
-@use "cursor";
+@use 'display';
+@use 'position';
+@use 'sizing';
+@use 'spacing';
+@use 'border';
+@use 'rounded';
+@use 'text';
+@use 'overflow';
+@use 'cursor';
+@use 'image';
+@use 'icon';
+
 
 // Generate Helpers
 @each $key,
@@ -25,13 +35,16 @@ $utility in $utilities {
   // 获取类名前缀
   $property-class-prefix: map.get($utility, class);
 
-  // 如果map对象中的类名前缀为空，就返回空，否则拼接中划线
+  /**
+   * 如果map对象中的类名前缀为空，就返回空，否则拼接中划线
+   * class: '' -> 就直接用属性值作为class
+   * class: 'b' -> b-
+  */
+
   $property-class-prefix-hyphen: if($property-class-prefix=="",
     $property-class-prefix,
     $property-class-prefix + "-"
   );
-
-  @debug '$property-class-prefix-hyphen======>'$property-class-prefix-hyphen;
 
   @each $class-modifier,
   $value in $values {
